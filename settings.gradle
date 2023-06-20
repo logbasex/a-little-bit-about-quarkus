@@ -1,4 +1,6 @@
 rootProject.name = 'a-little-bit-about-quarkus'
+
+//order matter
+include 'quarkus-spring'
 include 'quarkus-spring:quarkus'
 include 'quarkus-spring:spring'
-include 'quarkus-spring'
