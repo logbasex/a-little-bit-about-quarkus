@@ -1,11 +1,3 @@
-pluginManagement {
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
-        mavenLocal()
-    }
-    plugins {
-        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
-    }
-}
 rootProject.name = 'a-little-bit-about-quarkus'
+include 'quarkus-spring:quarkus'
+include 'quarkus-spring:spring'
