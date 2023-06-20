@@ -8,8 +8,8 @@
 # Using Buildpacks
 # https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#build-image.examples.custom-image-name
 
-spring$ ./gradlew bootBuildImage --imageName=$${IMAGE_NAME}
-spring$ docker run -i --name spring --rm -p 8082:8082 spring/spring
+spring$ ./gradlew bootBuildImage --imageName=spring/spring
+spring$ docker run -i --rm -p 8081:8081 spring/spring
 ```
 
 ## Quarkus
