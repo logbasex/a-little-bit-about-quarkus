@@ -59,4 +59,5 @@ Change code and recall API to see the difference.
 - [GraalVM — Make Java Great Again](https://batnamv.medium.com/c%C3%A1ch-m%E1%BA%A1ng-h%C3%B3a-java-v%E1%BB%9Bi-graalvm-d7fe1cfa3c25)
 
 
+## [Why Dropping Java 8](https://github.com/quarkusio/quarkus/wiki/Why-Dropping-Java-8)
 
