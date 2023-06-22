@@ -11,7 +11,12 @@ repositories {
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-arc'
-    implementation 'io.quarkus:quarkus-resteasy-reactive'
+
+    // quarkus-resteasy using Jackson, quarkus-resteasy-jsonb using JSON-B
+    // In summary, both libraries can be used for parsing and generating JSON data in Java.
+    // However, Jackson is a more mature library with more features and customizations, while JSON-B is a more recent library and is designed to be more simple to use, it is an official standard for JSON binding in Java
+    implementation 'io.quarkus:quarkus-resteasy-jsonb'
+
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 }
