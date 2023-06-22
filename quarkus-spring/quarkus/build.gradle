@@ -10,6 +10,8 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    // CDI (Contexts & Dependency Injection)
+    // Arc welding
     implementation 'io.quarkus:quarkus-arc'
 
     // quarkus-resteasy using Jackson, quarkus-resteasy-jsonb using JSON-B
