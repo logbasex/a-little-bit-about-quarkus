@@ -24,7 +24,7 @@ Subatomic gives you the sensation of size, uh, atomic, you know, so you can thin
 
 When you build an executable jar, the size of the binary is way smaller, shorter than other Java toolkits and also it consumes less memory.
 
-SoQuarkus is very well optimized in terms of resource consumption.
+So Quarkus is very well optimized in terms of resource consumption.
 
 Then you have a second sentence on the same quarks.io website.
 
