@@ -1,0 +1,2 @@
+- https://github.com/agoncal/agoncal-course-quarkus-starting
+- https://medium.com/@samuelcatalano/quarkus-the-power-of-annotations-f9c8ecbb2359
