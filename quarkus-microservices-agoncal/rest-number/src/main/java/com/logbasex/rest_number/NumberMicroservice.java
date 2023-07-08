@@ -6,7 +6,10 @@ import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Info;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-
+/**
+ * OpenAPI Docs <a href="http://localhost:8701/q/openapi">...</a>
+ * Swagger <a href="http://localhost:8701/q/swagger-ui/">...</a>
+ */
 @ApplicationPath("/")
 @OpenAPIDefinition(
 		info = @Info(title = "Number API",
