@@ -17,6 +17,10 @@ dependencies {
 	testImplementation 'io.rest-assured:rest-assured'
 	implementation 'io.quarkus:quarkus-smallrye-openapi'
 	implementation 'io.quarkus:quarkus-rest-client'
+
+	//	https://quarkus.io/guides/mongodb-panache
+	implementation 'io.quarkus:quarkus-mongodb-panache'
+
 	implementation 'io.quarkus:quarkus-smallrye-fault-tolerance'
 	implementation 'io.quarkus:quarkus-container-image-docker'
 

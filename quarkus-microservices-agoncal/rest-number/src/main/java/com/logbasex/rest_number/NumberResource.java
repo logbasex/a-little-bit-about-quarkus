@@ -19,6 +19,9 @@ public class NumberResource {
 	@Inject
 	Logger logger;
 	
+	@Inject
+	NumberRepository numberRepo;
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Operation(summary = "Generates book numbers")
@@ -28,6 +31,11 @@ public class NumberResource {
 		isbnNumbers.isbn10 = "10-" + new Random().nextInt(100_000);
 		isbnNumbers.generationDate = Instant.now();
 		logger.info("Numbers generated " + isbnNumbers);
-		return isbnNumbers;
+		
+		return numberRepo
+				.listAll()
+				.stream()
+				.findFirst()
+				.orElse(isbnNumbers);
 	}
 }
