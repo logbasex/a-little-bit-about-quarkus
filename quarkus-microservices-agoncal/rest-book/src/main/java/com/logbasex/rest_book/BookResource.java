@@ -14,6 +14,7 @@ import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 
 import java.io.PrintWriter;
@@ -24,9 +25,9 @@ import java.time.Instant;
 @SuppressWarnings("all")
 public class BookResource {
 	
-//	@Inject
-//	@RestClient
-//	NumberProxy proxy;
+	@Inject
+	@RestClient
+	NumberProxy proxy;
 	
 	@Inject
 	Logger logger;
@@ -49,7 +50,7 @@ public class BookResource {
 	@Fallback(fallbackMethod = "fallbackOnCreatingABook")
 	public Response createABook(@RequestBody BookRequest request) {
 		Book book = new Book();
-//		book.setIsbn13(proxy.generateIsbnNumbers().isbn13);
+		book.setIsbn13(proxy.generateIsbnNumbers().isbn13);
 		book.setTitle(request.getTitle());
 		book.setAuthor(request.getAuthor());
 		book.setYearOfPublication(request.getYearOfPublication());
