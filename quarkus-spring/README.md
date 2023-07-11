@@ -46,6 +46,28 @@ Disadvantages of JAR files:
 
 In summary, native executables provide better performance and platform integration but lack portability, while JAR files offer platform independence and easier distribution but may have a slight performance overhead and require a JVM. The choice between the two depends on factors such as target platforms, performance requirements, development complexity, and the need for platform-specific functionality.
 
+## JVM mode vs Native image mode
+Quarkus provides two modes of deployment: JVM mode and Native Image mode. Here's a comparison between the two:
+
+JVM Mode:
+- In JVM mode, Quarkus applications are executed on a traditional Java Virtual Machine (JVM).
+- JVM mode allows for a broader range of Java language features and dynamic behavior, as it runs Java bytecode.
+- It offers faster development cycles since no additional compilation step is required.
+- Applications in JVM mode tend to have a faster startup time compared to traditional Java applications due to Quarkus' optimizations, but it's generally slower than the Native Image mode.
+- JVM mode provides better compatibility with existing Java libraries and frameworks, allowing developers to leverage their existing knowledge and reuse code.
+- It offers the flexibility of dynamically loading and hot-swapping code during development, enabling faster iterative development and debugging.
+
+Native Image Mode:
+- In Native Image mode, Quarkus applications are compiled ahead of time into a native executable using GraalVM's native image feature.
+- Native Image mode provides significantly faster startup times compared to JVM mode, often measured in milliseconds. This is because the native executable eliminates the need for JVM startup and just-in-time (JIT) compilation.
+- Applications in Native Image mode have a reduced memory footprint, as they only include the necessary components and dependencies required for the application.
+- Native Image mode may have some limitations or require additional configuration due to the static nature of the native executable. Certain dynamic features, reflection, or dynamic classloading may require special handling or adjustments.
+- It offers better control over resource utilization and improved overall performance, making it suitable for microservices, serverless architectures, and environments with limited resources.
+- The compilation step for creating the native executable adds an additional build phase, which can increase the development cycle time slightly.
+- Native Image mode is generally recommended for production deployments where fast startup, low memory consumption, and efficient resource utilization are critical.
+
+The choice between JVM mode and Native Image mode depends on the specific requirements of your application. JVM mode provides better compatibility and flexibility, while Native Image mode offers superior performance and resource efficiency, particularly in cloud-native and resource-constrained environments.
+
 ## Performance
 https://medium.com/arconsis/spring-boot-vs-quarkus-part-2-jvm-runtime-performance-af45d0db116e
 
