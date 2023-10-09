@@ -1,3 +1,9 @@
+## [Static Proxy in Quarkus](https://dev.to/nutrymaco/static-proxies-in-quarkus-4ebf)
+
+Quarkus combines bytecode generation, bytecode transformation and knowledge about all classes to generate proxy at build time. Thereby giving better perfomance at runtime and possibility for creating proxy for final classes.
+
+---
+
 ## Does quarkus using static proxy?
 
 Yes, Quarkus uses static proxies. Static proxies are created at build time, which means that they are more efficient than dynamic proxies, which are created at runtime. Quarkus also uses bytecode transformation to modify the bytecode of classes with the final modifier, so that they can be proxied.
