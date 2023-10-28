@@ -22,20 +22,24 @@ public class NumberResource {
 	@Inject
 	NumberRepository numberRepo;
 	
+	@Inject
+	IsbnNumbersMapper isbnNumbersMapper;
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Operation(summary = "Generates book numbers")
-	public IsbnNumbers generateIsbnNumbers() {
-		IsbnNumbers isbnNumbers = new IsbnNumbers();
-		isbnNumbers.isbn13 = "13-" + new Random().nextInt(100_000_000);
-		isbnNumbers.isbn10 = "10-" + new Random().nextInt(100_000);
-		isbnNumbers.generationDate = Instant.now();
-		logger.info("Numbers generated " + isbnNumbers);
+	public IsbnNumbersResponse generateIsbnNumbers() {
+		IsbnNumbers defaultIsbnNumbers = new IsbnNumbers();
+		defaultIsbnNumbers.isbn13 = "13-" + new Random().nextInt(100_000_000);
+		defaultIsbnNumbers.isbn10 = "10-" + new Random().nextInt(100_000);
+		defaultIsbnNumbers.generationDate = Instant.now();
+		logger.info("Numbers generated " + defaultIsbnNumbers);
 		
-		return numberRepo
+		IsbnNumbers isbnNumbers = numberRepo
 				.listAll()
 				.stream()
 				.findFirst()
-				.orElse(isbnNumbers);
+				.orElse(defaultIsbnNumbers);
+		return isbnNumbersMapper.toDto(isbnNumbers);
 	}
 }
